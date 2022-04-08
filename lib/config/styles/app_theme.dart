@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_teleheal/config/styles/app_colors.dart';
 
 class AppTheme {
-  static const _roundedSize = 34.0;
+  static const _roundedSize = 16.0;
 
   static final main = ThemeData(
     visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -31,7 +31,7 @@ class AppTheme {
     buttonTheme: ButtonThemeData(
       buttonColor: AppColors.primary,
       textTheme: ButtonTextTheme.primary,
-      height: 54.0,
+      height: 45.0,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(_roundedSize)),
     ),
