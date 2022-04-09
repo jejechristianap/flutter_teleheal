@@ -24,7 +24,7 @@ class HomePage extends GetView<HomeController> {
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
-                        'Flutter',
+                        'Teleheal',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
