@@ -1,4 +1,5 @@
 import 'package:flutter_teleheal/config/route/route_constant.dart';
+import 'package:flutter_teleheal/presentation/controller/home/home_binding.dart';
 import 'package:flutter_teleheal/presentation/controller/login/login_binding.dart';
 import 'package:flutter_teleheal/presentation/pages/login/login_page.dart';
 import 'package:flutter_teleheal/presentation/pages/main/main_page.dart';
@@ -18,6 +19,7 @@ class AppRoute {
     ),
     GetPage(
       name: RouteConstant.main,
+      binding: HomeBinding(),
       page: () => const MainPage(),
     ),
   ];
