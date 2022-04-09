@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_teleheal/presentation/controller/login/login_controller.dart';
-import 'package:flutter_teleheal/presentation/widgets/progress_dialog.dart';
 import 'package:get/get.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
@@ -33,6 +32,9 @@ class LoginPage extends GetView<LoginController> {
                       child: ReactiveTextField(
                         keyboardType: TextInputType.phone,
                         formControlName: 'phone_number',
+                        decoration: const InputDecoration(
+                          hintText: 'Phone Number',
+                        ),
                         textInputAction: TextInputAction.next,
                         validationMessages: (control) => {
                           'required': 'Phone number is required!',
@@ -46,6 +48,9 @@ class LoginPage extends GetView<LoginController> {
                       child: ReactiveTextField(
                         keyboardType: TextInputType.emailAddress,
                         formControlName: 'email',
+                        decoration: const InputDecoration(
+                          hintText: 'Email',
+                        ),
                         textInputAction: TextInputAction.done,
                         validationMessages: (control) => {
                           'required': 'Email is required!',
@@ -65,16 +70,12 @@ class LoginPage extends GetView<LoginController> {
               child: SizedBox(
                 height: 45,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Get.dialog(
-                      const ProgressDialog(),
-                      barrierDismissible: false,
-                    );
-                  },
+                  onPressed: () =>
+                      controller.isValid ? controller.login() : null,
                   child: const Text('Login'),
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),
